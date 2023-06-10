@@ -1,7 +1,7 @@
 # **單字卡專題**
 ## **版本**
 ***
-- 可執行檔(exe)：word_card_exe.zip
+- 可執行檔(exe)：word_card_exe.zip(於release中)
 - 原始代碼
 ## **功能**
 ***
