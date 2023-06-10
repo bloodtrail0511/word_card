@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>
+            單字卡
+        </title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel = "icon" type = "image/icon" href = "./img/logo.ico">
+        <link rel="stylesheet" href="./css/style.css">
+        <script src="/eel.js"></script>
+        <script src="./js/func.js"></script>
+        
+    </head>
+    <body>
+        <div id="black" class="black"></div>
+        <div class="main_pg">
+            <i class="fa-solid fa-star" id="favorite" onclick="table('Favorite')"></i>
+            <i class=" edit fa-solid fa-pen-to-square" id="edit" onclick="edit_title()"></i>
+            <div id="new" onclick="new_div()"></div>
+            <div class="deck_group">
+                <script>deck_group()</script>
+            </div>
+        </div>
+        <div id="card_deck_inside">
+            <div id="deck_title">Title</div>
+            <div class="flip_card">
+                <div class="view">
+                </div>
+                <i class="previous_flip fa-solid fa-angle-left" onclick="previous(0)"></i>
+                <i class="next_flip fa-solid fa-chevron-right" onclick="next(0)"></i>
+            </div>
+            <div id="card_group">
+                <div class="word_content">
+                    <div class="sec sec_0">
+                        <div class="key">boulevard</div>
+                        <div class="pron_key">[ˈbo͝oləˌvärd]</div>
+                    </div>
+                    
+                    <div class="sec sec_1"></div>
+                    
+                    <div class="sec sec_2">
+                        <div class="pos">(n.)</div>
+                        <div class="value">林蔭大道</div>
+                        <div class="pron_value">[Lín yīn dàdào]</div>
+                    </div>
+
+                    <div class="sec sec_3">
+                        <div class="fav">0</div>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+
+                    
+                </div>
+            </div>
+            <i class="fa-solid fa-pen-to-square" id="edit_deck" onclick="edit_deck()"></i>
+            <i class="test fa-solid fa-dumbbell" onclick="test()"></i>
+            <i class="return_btn fa-solid fa-house" onclick="zoom_out()"></i>
+        </div>
+        <div id="edit_group" class="">
+            <div class="container">
+                <div class="inputbox title_edit">
+                    <input type="text" class="inputbox" required="required">
+                    <span>標題</span>
+                </div>
+                <script>lang_menu()</script>
+                <div class="word word_0">
+                    <div class="left_edit">
+                        <div class="inputbox key_edit">
+                            <input type="text" required="required" onfocus="startTimer(0)" onblur="stopTimer(0)">
+                            <span>詞彙</span>
+                        </div>
+                        <div class="inputbox pron_key_edit">
+                            <input type="text" required="required">
+                            <span>發音</span>
+                        </div>
+                    </div>
+                    <div class="inputbox pos_edit">
+                        <input type="text" required="required">
+                        <span>詞性</span>
+                    </div>                    
+                    <div class="right_edit">
+                        <div class="inputbox value_edit">
+                            <input type="text" required="required">
+                            <span>目標語言</span>
+                        </div>
+                        <div class="inputbox pron_value_edit">
+                            <input type="text" required="required">
+                            <span>目標語言發音</span>
+                        </div>
+                    </div>
+                    <i class="del fa-solid fa-circle-xmark" onclick="remove(0)"></i>
+                </div>
+                <div class="word new" onclick="new_word()">
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+            </div>
+            <i class="check_btn fa-solid fa-square-check" onclick="submit('new_table')"></i>
+            <i class="return_btn fa-solid fa-reply" id="return_btn" onclick="go_down()"></i>
+        </div>
+        <div class="test_pg">
+            <div class="order_1">
+                <div class="q_num">1/10</div>
+                <div class="question">question</div>
+            </div>
+            <div class="order_2">
+                <div class="choose choose_1">
+                    <div class="option option1">A) ans1</div>
+                    <div class="plate plate1"></div>
+                </div>
+                <div class="choose choose_2">
+                    <div class="option option2">B) ans2</div>
+                    <div class="plate plate2"></div>
+                </div>
+            </div>
+            <div class="order_3">
+                <div class="choose choose_3">
+                    <div class="option option3">C) ans3</div>
+                    <div class="plate plate3"></div>
+                </div>
+                <div class="choose choose_4">
+                    <div class="option option4">D) ans4</div>
+                    <div class="plate plate4"></div>
+                </div>
+            </div>
+            <div class="control">
+                <i class="pre_q fa-solid fa-backward"></i>
+                <i class="next_q fa-solid fa-forward"></i>
+                <i class="cancel_test fa-solid fa-reply" onclick="cancel_test()"></i>
+            </div>
+
+            <div class="result_pg">
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                    <defs>
+                        <linearGradient id="GradientColor">
+                            <stop offset="0%" stop-color="#e91e63" />
+                            <stop offset="100%" stop-color="#673ab7" />
+                        </linearGradient>
+                    </defs>
+                    <circle cx="80" cy="80" r="70" stroke-linecap="round" />
+                </svg>
+                <div id="number">
+                    0%
+                </div>
+                <i class="fin_btn fa-solid fa-circle-xmark" onclick="finish()"></i>
+            </div>
+            <div class="block hide"></div>
+        </div>
+    </body>
+    <script src="./js/test.js"></script>
+</html>
